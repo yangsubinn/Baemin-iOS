@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "79420D0F392D692393FD6C00D366DBE9"
-               BuildableName = "Pods-Baemin.framework"
+               BuildableName = "Pods_Baemin.framework"
                BlueprintName = "Pods-Baemin"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

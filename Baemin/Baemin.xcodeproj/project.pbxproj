@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2B95896426B4307100B9E0F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95896326B4307100B9E0F2 /* AppDelegate.swift */; };
 		2B95896626B4307100B9E0F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95896526B4307100B9E0F2 /* SceneDelegate.swift */; };
-		2B95896826B4307100B9E0F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95896726B4307100B9E0F2 /* ViewController.swift */; };
 		2B95896B26B4307100B9E0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896926B4307100B9E0F2 /* Main.storyboard */; };
 		2B95896D26B4307200B9E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896C26B4307200B9E0F2 /* Assets.xcassets */; };
 		2B95897026B4307200B9E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896E26B4307200B9E0F2 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		2B95896026B4307100B9E0F2 /* Baemin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baemin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B95896326B4307100B9E0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B95896526B4307100B9E0F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2B95896726B4307100B9E0F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B95896A26B4307100B9E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B95896C26B4307200B9E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B95896F26B4307200B9E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,13 +114,8 @@
 		2B95896226B4307100B9E0F2 /* Baemin */ = {
 			isa = PBXGroup;
 			children = (
-				2B95896326B4307100B9E0F2 /* AppDelegate.swift */,
-				2B95896526B4307100B9E0F2 /* SceneDelegate.swift */,
-				2B95896726B4307100B9E0F2 /* ViewController.swift */,
-				2B95896926B4307100B9E0F2 /* Main.storyboard */,
-				2B95896C26B4307200B9E0F2 /* Assets.xcassets */,
-				2B95896E26B4307200B9E0F2 /* LaunchScreen.storyboard */,
-				2B95897126B4307200B9E0F2 /* Info.plist */,
+				2B95899326B4320400B9E0F2 /* Source */,
+				2B95899426B4321100B9E0F2 /* Resource */,
 			);
 			path = Baemin;
 			sourceTree = "<group>";
@@ -145,6 +138,114 @@
 			path = BaeminUITests;
 			sourceTree = "<group>";
 		};
+		2B95899326B4320400B9E0F2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2B95899F26B432A900B9E0F2 /* Extensions */,
+				2B95899E26B4329D00B9E0F2 /* Models */,
+				2B95899D26B4329600B9E0F2 /* ViewModels */,
+				2B95899C26B4329000B9E0F2 /* Components */,
+				2B95899B26B4328B00B9E0F2 /* Cells */,
+				2B95899A26B4328000B9E0F2 /* ViewControllers */,
+				2B95899926B4327600B9E0F2 /* Supports */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2B95899426B4321100B9E0F2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2B95896C26B4307200B9E0F2 /* Assets.xcassets */,
+				2B95897126B4307200B9E0F2 /* Info.plist */,
+				2B95899826B4324B00B9E0F2 /* Fonts */,
+				2B95899726B4324100B9E0F2 /* APIServices */,
+				2B95899626B4323100B9E0F2 /* Xibs */,
+				2B95899526B4322100B9E0F2 /* Storyboards */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2B95899526B4322100B9E0F2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2B95896926B4307100B9E0F2 /* Main.storyboard */,
+				2B95896E26B4307200B9E0F2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2B95899626B4323100B9E0F2 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		2B95899726B4324100B9E0F2 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		2B95899826B4324B00B9E0F2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2B95899926B4327600B9E0F2 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				2B95896326B4307100B9E0F2 /* AppDelegate.swift */,
+				2B95896526B4307100B9E0F2 /* SceneDelegate.swift */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		2B95899A26B4328000B9E0F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2B95899B26B4328B00B9E0F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2B95899C26B4329000B9E0F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2B95899D26B4329600B9E0F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2B95899E26B4329D00B9E0F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B95899F26B432A900B9E0F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4D6F1AD1F8D1A02D3AD464F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +266,6 @@
 				56FA0EAF4978D120BB11F29E /* Pods-BaeminTests.debug.xcconfig */,
 				7A22F74CF661910DE96A8C4D /* Pods-BaeminTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,7 +507,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B95896826B4307100B9E0F2 /* ViewController.swift in Sources */,
 				2B95896426B4307100B9E0F2 /* AppDelegate.swift in Sources */,
 				2B95896626B4307100B9E0F2 /* SceneDelegate.swift in Sources */,
 			);
