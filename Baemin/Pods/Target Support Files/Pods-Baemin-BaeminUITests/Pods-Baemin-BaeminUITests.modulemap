@@ -1,0 +1,6 @@
+framework module Pods_Baemin_BaeminUITests {
+  umbrella header "Pods-Baemin-BaeminUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
