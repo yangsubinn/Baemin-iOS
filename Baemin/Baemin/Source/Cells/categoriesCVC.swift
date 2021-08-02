@@ -21,7 +21,7 @@ class categoriesCVC: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        print("-----------prepareForReuse---------")
+//        print("-----------prepareForReuse---------")
     }
     
     //MARK: - Custom Method
@@ -32,7 +32,7 @@ class categoriesCVC: UICollectionViewCell {
         categoryLabel.textColor = .black
         categoryLabel.font = UIFont.systemFont(ofSize: 15)
         
-        print("configUI 실행")
+//        print("configUI 실행")
     }
     
     private func setupLayout() {
@@ -42,7 +42,7 @@ class categoriesCVC: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(10)
         }
-        print("setupLayout 실행됨")
+//        print("setupLayout 실행됨")
     }
 
 }

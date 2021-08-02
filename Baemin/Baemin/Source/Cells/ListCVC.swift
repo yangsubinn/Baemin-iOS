@@ -20,7 +20,7 @@ class ListCVC: UICollectionViewCell {
         super.awakeFromNib()
         setupLayout()
         configUI()
-        print("이거 아예 실행 안되는건가?")
+//        print("이거 아예 실행 안되는건가?")
     }
     
     override func prepareForReuse() {
@@ -33,7 +33,7 @@ class ListCVC: UICollectionViewCell {
         
         listLabel.text = "귀찮다"
         listLabel.textColor = .black
-        print("configUI 실행")
+//        print("configUI 실행")
     }
     
     private func setupLayout() {
@@ -42,7 +42,7 @@ class ListCVC: UICollectionViewCell {
         listLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
-        print("setupLayout 실행됨")
+//        print("setupLayout 실행됨")
     }
 
 }

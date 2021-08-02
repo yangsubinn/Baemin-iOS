@@ -92,7 +92,7 @@ class ListVC: UIViewController {
     var categoryLabel = UILabel()
     var alignLabel = UILabel()
     
-    let categories = ["한식", "분식", "카페·디저트", "돈까스·회·일식", "치킨", "피자", "아시안·양식", "중국집", "족발·보쌈", "야식", "찜·탕", "도시락", "패스트푸드"]
+    let categories = ["한식", "분식", "돈까스·회·일식", "치킨", "피자", "아시안·양식", "중국집", "족발·보쌈", "야식", "찜·탕", "도시락", "카페·디저트", "패스트푸드"]
     let listLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     let aligns = ["배달 빠른 순", "배달팁 낮은 순", "기본순", "주문 많은 순", "별점 높은 순", "가까운 순"]
     let categoriesCellLineSpacing: CGFloat = 20.0
@@ -128,6 +128,7 @@ class ListVC: UIViewController {
         view.addSubview(indicatorBarView)
         
         let labelSize = calcCategoryLabelSize(text: categories[0])
+//        print("labelSize:\(labelSize)")
         
         backButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(48)
@@ -170,6 +171,7 @@ class ListVC: UIViewController {
         categoryLabel.text = text
         categoryLabel.sizeToFit()
 
+//        print(categoryLabel.bounds.size)
         return categoryLabel.bounds.size
     }
     
@@ -312,7 +314,7 @@ extension ListVC: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == categoriesCollectionView {
-            return 30 //10
+            return 20 //10
         } else if collectionView == alignCollectionView {
             return 40
         }
@@ -321,7 +323,7 @@ extension ListVC: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == categoriesCollectionView {
-            return UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         } else if collectionView == alignCollectionView {
             return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         }
