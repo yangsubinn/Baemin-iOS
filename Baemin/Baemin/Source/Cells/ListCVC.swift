@@ -29,7 +29,7 @@ class ListCVC: UICollectionViewCell {
     
     //MARK: - Custom Method
     private func configUI() {
-        self.backgroundColor = .blue
+        self.backgroundColor = .lightGray
         
         listLabel.text = "귀찮다"
         listLabel.textColor = .black
