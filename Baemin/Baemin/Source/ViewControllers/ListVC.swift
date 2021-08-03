@@ -20,7 +20,7 @@ class ListVC: UIViewController {
         layout.scrollDirection = .horizontal
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
 
         collectionView.register(categoriesCVC.self, forCellWithReuseIdentifier: categoriesCVC.identifier)
@@ -43,7 +43,7 @@ class ListVC: UIViewController {
         layout.scrollDirection = .horizontal
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .cyan
+        collectionView.backgroundColor = .lightGray
         collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -183,10 +183,12 @@ class ListVC: UIViewController {
     }
     
     private func configUI() {
+        view.backgroundColor = .white
         backButton.setImage(UIImage(named: "backBtn"), for: .normal)
         
         topLabel.text = "한식"
         topLabel.textAlignment = .center
+        topLabel.textColor = .black
     }
 
     private func setupCollectionView() {
@@ -238,7 +240,7 @@ extension ListVC: UICollectionViewDataSource {
         case categoriesCollectionView:
             guard  let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: categoriesCVC.identifier, for: indexPath) as? categoriesCVC else { return UICollectionViewCell() }
             
-            cell.backgroundColor = .brown
+            cell.backgroundColor = .clear
             cell.categoryLabel.text = categories[indexPath.item]
             
             return cell
@@ -254,7 +256,7 @@ extension ListVC: UICollectionViewDataSource {
             guard let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: ListCVC.identifier, for: indexPath) as? ListCVC else { return UICollectionViewCell() }
             
             cell.listLabel.text = listLabels[indexPath.item]
-            cell.backgroundColor = .systemPurple
+            cell.backgroundColor = .gray
             
             return cell
             
@@ -294,9 +296,34 @@ extension ListVC: UICollectionViewDelegate {
         
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+////        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        if collectionView == categoriesCollectionView {
+            listCollectionView.isPagingEnabled = false
+            listCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+            listCollectionView.isPagingEnabled = true
+
+            guard let cell = categoriesCollectionView.cellForItem(at: indexPath) as? categoriesCVC else {
+                return
+            }
+            
+            topLabel.text = categories[indexPath.item]
+
+            indicatorBarView.snp.remakeConstraints { make in
+                make.top.equalTo(cell.snp.bottom).inset(15)
+                make.leading.equalTo(cell.snp.leading)
+                make.width.equalTo(cell.snp.width)
+                make.height.equalTo(3)
+            }
+
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }
 
