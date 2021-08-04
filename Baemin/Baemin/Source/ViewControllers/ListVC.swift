@@ -34,6 +34,7 @@ class ListVC: UIViewController {
     private var indicatorBarView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
+        view.layer.cornerRadius = 2
 
         return view
     }()
@@ -43,7 +44,7 @@ class ListVC: UIViewController {
         layout.scrollDirection = .horizontal
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = .clear
         collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -64,7 +65,7 @@ class ListVC: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .lightGray
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -195,27 +196,19 @@ class ListVC: UIViewController {
     }
 
     private func setupCollectionView() {
-//        let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        collectionView.collectionViewLayout = collectionViewFlowLayout
-//
+
         listCollectionView.setupCollectionViewNib(nib: ListCVC.identifier)
         alignCollectionView.setupCollectionViewNib(nib: alignCVC.identifier)
         categoriesCollectionView.setupCollectionViewNib(nib: categoriesCVC.identifier)
-////        collectionView.register(ListCVC.self, forCellWithReuseIdentifier: "ListCVC")
-//        print("CVC 아직 안보여")
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-//
-//        collectionView.isPagingEnabled = true
-//        collectionView.backgroundColor = .darkGray
-//
+
         let indexPath = IndexPath(item: 0, section: 0)
         listCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
+        categoriesCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
     }
     
-    func scrollToMenu(to index: Int) {
-        categoriesCollectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .init())
+    func scrollToCategory(to index: Int) {
+//        categoriesCollectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .init())
+        categoriesCollectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         collectionView(categoriesCollectionView, didSelectItemAt: IndexPath(row: index, section: 0))
     }
 }
@@ -238,8 +231,6 @@ extension ListVC: UICollectionViewDataSource {
             return listLabels.count
         
         }
-        
-//        return listLabels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -267,7 +258,7 @@ extension ListVC: UICollectionViewDataSource {
 //            return wrapAndGetCell(viewColtroller: sectionVC, cell: cell)
             
             cell.listLabel.text = listLabels[indexPath.item]
-            cell.backgroundColor = .gray
+            cell.backgroundColor = .clear
 
             return cell
             
@@ -300,13 +291,9 @@ extension ListVC: UICollectionViewDelegate {
         /// listCollectionView indexPath.item이 3 이상일 때부터, categoriesCollecitonView랑 indicatorbar를 가운데로
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.x > 375 {}
-//    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let idx = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
-        scrollToMenu(to: idx)
+        scrollToCategory(to: idx)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -325,7 +312,6 @@ extension ListVC: UICollectionViewDelegate {
             print("realCenter\(realCenter)")
             print("indexPath.item: \(categories[indexPath.item])")
             print(categories.firstIndex(of: categories[indexPath.item]) ?? 0)
-//            print("------------------------------------------------")
             
             var index = categories.firstIndex(of: categories[indexPath.item]) ?? 0
             
@@ -336,12 +322,13 @@ extension ListVC: UICollectionViewDelegate {
                     make.width.equalTo(cell.snp.width)
                     make.height.equalTo(3)
                 }
-//                print("XAnchor: \(cell.centerXAnchor), YAnchor: \(cell.centerYAnchor)")
-//                print("indicatorBarView.center-------")
-//                print(indicatorBarView.center)
-//                print("cell.centerYAnchor-------")
-//                print(cell.centerYAnchor)
-                
+            } else if index > 10 {
+                indicatorBarView.snp.remakeConstraints { make in
+                    make.top.equalTo(cell.snp.bottom).inset(15)
+                    make.leading.equalTo(cell.snp.leading)
+                    make.width.equalTo(cell.snp.width)
+                    make.height.equalTo(3)
+                }
             } else {
                 indicatorBarView.snp.remakeConstraints { make in
                     make.top.equalTo(cell.snp.bottom).inset(15)
@@ -349,27 +336,10 @@ extension ListVC: UICollectionViewDelegate {
                     make.width.equalTo(cell.snp.width)
                     make.height.equalTo(3)
                 }
-                
-//                print("---------indicatorBarView.center-------")
-//                print(indicatorBarView.center)
-//                print("---------cell.center-------")
-                print(cell.centerYAnchor)
-                
-//                cell.categoryLabel.snp.remakeConstraints { make in
-//                    make.centerX.equalTo(topLabel.snp.centerX)
-//
-//                }
 //                print("realCenter\(realCenter)")
 //                print("realCenter.x: \(realCenter.x),  realCenter.y: \(realCenter.y)")
                 
             }
-
-//            indicatorBarView.snp.remakeConstraints { make in
-//                make.top.equalTo(cell.snp.bottom).inset(15)
-//                make.leading.equalTo(cell.snp.leading)
-//                make.width.equalTo(cell.snp.width)
-//                make.height.equalTo(3)
-//            }
 
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
@@ -433,13 +403,5 @@ extension ListVC: UICollectionViewDelegateFlowLayout {
             let height = UIScreen.main.bounds.height - (size.height + 26 + 3 + view.safeAreaInsets.top)
             return CGSize(width: UIScreen.main.bounds.width, height: floor(height))
         }
-        
-//        let size = calcCategoryLabelSize(text: categories[indexPath.row])
-//
-//        if collectionView == categoriesCollectionView {
-//            return CGSize(width: size.width + 10, height: size.height + 26)
-//        }
-//        let height = UIScreen.main.bounds.height - (size.height + 26 + 3 + view.safeAreaInsets.top)
-//        return CGSize(width: UIScreen.main.bounds.width, height: floor(height))
     }
 }
