@@ -11,6 +11,7 @@ import SnapKit
 
 class ListCVC: UICollectionViewCell {
     static let identifier = "ListCVC"
+    static let SUBVIEW_TAG: Int = 1000
     
     //MARK: - Properties
     let listLabel = UILabel()

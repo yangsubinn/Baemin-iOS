@@ -9,6 +9,7 @@ import UIKit
 
 class categoriesCVC: UICollectionViewCell {
     static let identifier = "categoriesCVC"
+//    static let SUBVIEW_TAG: Int = 1000
     
     var categoryLabel = UILabel()
 
