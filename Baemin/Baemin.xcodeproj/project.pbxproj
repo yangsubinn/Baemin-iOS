@@ -14,6 +14,13 @@
 		2B95897026B4307200B9E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896E26B4307200B9E0F2 /* LaunchScreen.storyboard */; };
 		2B95897B26B4307200B9E0F2 /* BaeminTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95897A26B4307200B9E0F2 /* BaeminTests.swift */; };
 		2B95898626B4307200B9E0F2 /* BaeminUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95898526B4307200B9E0F2 /* BaeminUITests.swift */; };
+		2BBC1A0226B658930059B0BF /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0126B658930059B0BF /* ListVC.swift */; };
+		2BBC1A0726B675AB0059B0BF /* ListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0526B675AB0059B0BF /* ListCVC.swift */; };
+		2BBC1A0826B675AB0059B0BF /* ListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0626B675AB0059B0BF /* ListCVC.xib */; };
+		2BE06D9F26B6A39E009749BF /* categoriesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */; };
+		2BE06DA026B6A39E009749BF /* categoriesCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE06D9E26B6A39E009749BF /* categoriesCVC.xib */; };
+		2BE06DA326B6A42C009749BF /* alignCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE06DA126B6A42C009749BF /* alignCVC.swift */; };
+		2BE06DA426B6A42C009749BF /* alignCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE06DA226B6A42C009749BF /* alignCVC.xib */; };
 		31556589CFA312FB42552CA0 /* Pods_BaeminTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16125688C197B99A3A560B7A /* Pods_BaeminTests.framework */; };
 		80A574EA766683C11EE22115 /* Pods_Baemin_BaeminUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989BFAC5F3260051968FAC23 /* Pods_Baemin_BaeminUITests.framework */; };
 		8FC206D6B8762C550064B195 /* Pods_Baemin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E32C60A657C5AF3C656EDC /* Pods_Baemin.framework */; };
@@ -51,6 +58,13 @@
 		2B95898126B4307200B9E0F2 /* BaeminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaeminUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B95898526B4307200B9E0F2 /* BaeminUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminUITests.swift; sourceTree = "<group>"; };
 		2B95898726B4307200B9E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BBC1A0126B658930059B0BF /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		2BBC1A0526B675AB0059B0BF /* ListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCVC.swift; sourceTree = "<group>"; };
+		2BBC1A0626B675AB0059B0BF /* ListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCVC.xib; sourceTree = "<group>"; };
+		2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesCVC.swift; sourceTree = "<group>"; };
+		2BE06D9E26B6A39E009749BF /* categoriesCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoriesCVC.xib; sourceTree = "<group>"; };
+		2BE06DA126B6A42C009749BF /* alignCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alignCVC.swift; sourceTree = "<group>"; };
+		2BE06DA226B6A42C009749BF /* alignCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alignCVC.xib; sourceTree = "<group>"; };
 		54629738EBDF4D9558E1A264 /* Pods-Baemin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baemin.debug.xcconfig"; path = "Target Support Files/Pods-Baemin/Pods-Baemin.debug.xcconfig"; sourceTree = "<group>"; };
 		56FA0EAF4978D120BB11F29E /* Pods-BaeminTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaeminTests.debug.xcconfig"; path = "Target Support Files/Pods-BaeminTests/Pods-BaeminTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61E32C60A657C5AF3C656EDC /* Pods_Baemin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baemin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +191,9 @@
 		2B95899626B4323100B9E0F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				2BE06DA226B6A42C009749BF /* alignCVC.xib */,
+				2BE06D9E26B6A39E009749BF /* categoriesCVC.xib */,
+				2BBC1A0626B675AB0059B0BF /* ListCVC.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -207,6 +224,7 @@
 		2B95899A26B4328000B9E0F2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2BBC1A0126B658930059B0BF /* ListVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +232,9 @@
 		2B95899B26B4328B00B9E0F2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2BBC1A0526B675AB0059B0BF /* ListCVC.swift */,
+				2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */,
+				2BE06DA126B6A42C009749BF /* alignCVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -377,8 +398,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBC1A0826B675AB0059B0BF /* ListCVC.xib in Resources */,
 				2B95897026B4307200B9E0F2 /* LaunchScreen.storyboard in Resources */,
+				2BE06DA426B6A42C009749BF /* alignCVC.xib in Resources */,
 				2B95896D26B4307200B9E0F2 /* Assets.xcassets in Resources */,
+				2BE06DA026B6A39E009749BF /* categoriesCVC.xib in Resources */,
 				2B95896B26B4307100B9E0F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,8 +531,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBC1A0226B658930059B0BF /* ListVC.swift in Sources */,
+				2BE06D9F26B6A39E009749BF /* categoriesCVC.swift in Sources */,
+				2BE06DA326B6A42C009749BF /* alignCVC.swift in Sources */,
 				2B95896426B4307100B9E0F2 /* AppDelegate.swift in Sources */,
 				2B95896626B4307100B9E0F2 /* SceneDelegate.swift in Sources */,
+				2BBC1A0726B675AB0059B0BF /* ListCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L372B2RJ6;
-				INFOPLIST_FILE = Baemin/Info.plist;
+				INFOPLIST_FILE = Baemin/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6L372B2RJ6;
-				INFOPLIST_FILE = Baemin/Info.plist;
+				INFOPLIST_FILE = Baemin/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
