@@ -15,6 +15,7 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     static let SUBVIEW_TAG: Int = 1000
     
     var tableView = UITableView(frame: .zero, style: .grouped)
+//    let cellIdentifier: String = "tableCell"
     
     //MARK: - Properties
     let listLabel = UILabel()
@@ -35,8 +36,8 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     private func configUI() {
         self.backgroundColor = .lightGray
         
-        listLabel.text = "귀찮다"
-        listLabel.textColor = .black
+//        listLabel.text = "귀찮다"
+//        listLabel.textColor = .black
     }
     
     private func setupLayout() {
@@ -54,17 +55,18 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     }
     
     func setupTableView() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(ListTVC.self, forCellReuseIdentifier: "ListTVC")
+        tableView.register(ListTVC.self, forCellReuseIdentifier: ListTVC.identifier)
+        
+        tableView.setupTableViewNib(nib: ListTVC.identifier)
         
         tableView.backgroundColor = .clear
-//        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.sectionFooterHeight = 0
-//        tableView.isScrollEnabled = false
-//        tableView.style = .grouped
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,7 +74,7 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? "오픈리스트 광고" : "울트라콜 광고" /// section이 한글이면 "한글", 영어면 "영어"
+        return section == 0 ? "오픈리스트 광고" : "울트라콜 광고"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,21 +82,43 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
         case 0:
             return 3
         case 1:
-            return 5
+            return 22
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ListTVC", for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTVC.identifier, for: indexPath) as? ListTVC else {
+            return UITableViewCell()
+        }
+//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: ListTVC.identifier, for: indexPath)
+//        print("-------------------")
+//        print(ListTVC.identifier)
+//        print("-------------------")
 //        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: ListTVC.self, for: indexPath)
         
 //        cell.backgroundColor = .purple
-        cell.textLabel?.text = "잘못된거야"
-        
+//        cell.tvcLabel.text
+//        cell.textLabel?.text = "잘못된거야"
+        cell.tvcLabel.text = "핳머니 손칼국수"
+        cell.storeImage.backgroundColor = .yellow
+//        cell.backgroundColor = .green
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
+//          return UITableView.automaticDimension
+        return 80
+       }
 
+}
+
+extension UITableView {
+    func setupTableViewNib(nib: String) {
+        let customNib = UINib(nibName: nib, bundle: nil)
+        self.register(customNib, forCellReuseIdentifier: nib)
+    }
 }

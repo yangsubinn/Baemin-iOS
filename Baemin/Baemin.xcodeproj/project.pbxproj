@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B7C345326BD351B0047D78D /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C345226BD351B0047D78D /* ListTVC.swift */; };
 		2B95896426B4307100B9E0F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95896326B4307100B9E0F2 /* AppDelegate.swift */; };
 		2B95896626B4307100B9E0F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95896526B4307100B9E0F2 /* SceneDelegate.swift */; };
 		2B95896B26B4307100B9E0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896926B4307100B9E0F2 /* Main.storyboard */; };
@@ -18,6 +17,7 @@
 		2BBC1A0226B658930059B0BF /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0126B658930059B0BF /* ListVC.swift */; };
 		2BBC1A0726B675AB0059B0BF /* ListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0526B675AB0059B0BF /* ListCVC.swift */; };
 		2BBC1A0826B675AB0059B0BF /* ListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0626B675AB0059B0BF /* ListCVC.xib */; };
+		2BC65E8F26BD90F100224A9C /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC65E8E26BD90F100224A9C /* ListTVC.swift */; };
 		2BE06D9F26B6A39E009749BF /* categoriesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */; };
 		2BE06DA026B6A39E009749BF /* categoriesCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE06D9E26B6A39E009749BF /* categoriesCVC.xib */; };
 		2BE06DA326B6A42C009749BF /* alignCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE06DA126B6A42C009749BF /* alignCVC.swift */; };
@@ -46,9 +46,8 @@
 
 /* Begin PBXFileReference section */
 		16125688C197B99A3A560B7A /* Pods_BaeminTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaeminTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B7C345226BD351B0047D78D /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListTVC.swift; path = Pods/ListTVC.swift; sourceTree = SOURCE_ROOT; };
 		2B95896026B4307100B9E0F2 /* Baemin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baemin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B95896326B4307100B9E0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B95896326B4307100B9E0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Baemin/Source/Supports/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2B95896526B4307100B9E0F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2B95896A26B4307100B9E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B95896C26B4307200B9E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		2BBC1A0126B658930059B0BF /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		2BBC1A0526B675AB0059B0BF /* ListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCVC.swift; sourceTree = "<group>"; };
 		2BBC1A0626B675AB0059B0BF /* ListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCVC.xib; sourceTree = "<group>"; };
+		2BC65E8E26BD90F100224A9C /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
 		2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesCVC.swift; sourceTree = "<group>"; };
 		2BE06D9E26B6A39E009749BF /* categoriesCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = categoriesCVC.xib; sourceTree = "<group>"; };
 		2BE06DA126B6A42C009749BF /* alignCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alignCVC.swift; sourceTree = "<group>"; };
@@ -234,10 +234,10 @@
 		2B95899B26B4328B00B9E0F2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2B7C345226BD351B0047D78D /* ListTVC.swift */,
 				2BBC1A0526B675AB0059B0BF /* ListCVC.swift */,
 				2BE06D9D26B6A39E009749BF /* categoriesCVC.swift */,
 				2BE06DA126B6A42C009749BF /* alignCVC.swift */,
+				2BC65E8E26BD90F100224A9C /* ListTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 			files = (
 				2BBC1A0226B658930059B0BF /* ListVC.swift in Sources */,
 				2BE06D9F26B6A39E009749BF /* categoriesCVC.swift in Sources */,
-				2B7C345326BD351B0047D78D /* ListTVC.swift in Sources */,
+				2BC65E8F26BD90F100224A9C /* ListTVC.swift in Sources */,
 				2BE06DA326B6A42C009749BF /* alignCVC.swift in Sources */,
 				2B95896426B4307100B9E0F2 /* AppDelegate.swift in Sources */,
 				2B95896626B4307100B9E0F2 /* SceneDelegate.swift in Sources */,

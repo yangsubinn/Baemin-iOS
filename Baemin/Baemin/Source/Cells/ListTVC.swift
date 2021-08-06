@@ -13,7 +13,6 @@ class ListTVC: UITableViewCell {
     
     var tvcLabel = UILabel()
     var storeImage = UIImageView()
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,8 +36,6 @@ class ListTVC: UITableViewCell {
         tvcLabel.font = UIFont.systemFont(ofSize: 15)
         
         storeImage.backgroundColor = .gray
-        
-//        print("configUI 실행")
     }
     
     private func setupLayout() {
