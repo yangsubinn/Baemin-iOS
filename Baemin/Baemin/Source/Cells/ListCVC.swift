@@ -9,9 +9,12 @@ import UIKit
 
 import SnapKit
 
-class ListCVC: UICollectionViewCell {
+class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate {
+    
     static let identifier = "ListCVC"
     static let SUBVIEW_TAG: Int = 1000
+    
+    var tableView = UITableView(frame: .zero, style: .grouped)
     
     //MARK: - Properties
     let listLabel = UILabel()
@@ -21,7 +24,7 @@ class ListCVC: UICollectionViewCell {
         super.awakeFromNib()
         setupLayout()
         configUI()
-//        print("이거 아예 실행 안되는건가?")
+        setupTableView()
     }
     
     override func prepareForReuse() {
@@ -34,16 +37,64 @@ class ListCVC: UICollectionViewCell {
         
         listLabel.text = "귀찮다"
         listLabel.textColor = .black
-//        print("configUI 실행")
     }
     
     private func setupLayout() {
         addSubview(listLabel)
+        addSubview(tableView)
         
         listLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
-//        print("setupLayout 실행됨")
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.register(ListTVC.self, forCellReuseIdentifier: "ListTVC")
+        
+        tableView.backgroundColor = .clear
+//        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.sectionFooterHeight = 0
+//        tableView.isScrollEnabled = false
+//        tableView.style = .grouped
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "오픈리스트 광고" : "울트라콜 광고" /// section이 한글이면 "한글", 영어면 "영어"
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 5
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ListTVC", for: indexPath)
+//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: ListTVC.self, for: indexPath)
+        
+//        cell.backgroundColor = .purple
+        cell.textLabel?.text = "잘못된거야"
+        
+        
+        return cell
     }
 
 }

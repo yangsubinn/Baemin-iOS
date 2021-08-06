@@ -362,7 +362,7 @@ extension ListVC: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == categoriesCollectionView {
-            return 20 //10
+            return 20
         } else if collectionView == alignCollectionView {
             return 40
         }
