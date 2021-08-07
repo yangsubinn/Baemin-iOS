@@ -9,10 +9,11 @@ import UIKit
 
 class categoriesCVC: UICollectionViewCell {
     static let identifier = "categoriesCVC"
-//    static let SUBVIEW_TAG: Int = 1000
     
+    //MARK: - Properties
     var categoryLabel = UILabel()
 
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,7 +23,6 @@ class categoriesCVC: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        print("-----------prepareForReuse---------")
     }
     
     //MARK: - Custom Method
@@ -32,8 +32,6 @@ class categoriesCVC: UICollectionViewCell {
         categoryLabel.text = "귀찮다"
         categoryLabel.textColor = .black
         categoryLabel.font = UIFont.systemFont(ofSize: 15)
-        
-//        print("configUI 실행")
     }
     
     private func setupLayout() {
@@ -43,7 +41,6 @@ class categoriesCVC: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(10)
         }
-//        print("setupLayout 실행됨")
     }
 
 }

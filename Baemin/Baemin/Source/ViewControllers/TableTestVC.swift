@@ -9,13 +9,15 @@ import UIKit
 
 class TableTestVC: UIViewController {
     
+    //MARK: - Properties
     var tableView = UITableView(frame: .zero, style: .grouped)
-    let storeList = ["하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", ]
+    let storeList = ["하나", "둘", "하나", "둘", "하나", "둘",
+                     "하나", "둘", "하나", "둘", "하나", "둘", "하나",
+                     "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupTableView()
         configUI()
         setupLayout()
         setupTableView()
@@ -41,7 +43,6 @@ class TableTestVC: UIViewController {
     }
     
     private func setupTableView() {
-        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -52,17 +53,6 @@ class TableTestVC: UIViewController {
         tableView.sectionFooterHeight = 0
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -91,7 +81,6 @@ extension TableTestVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTVC", for: indexPath) as? ListTVC else { return UITableViewCell() }
         
         cell.storeNameLabel.text = "할머니 보고싶어여"
-//        cell.backgroundColor = .clear
         
         return cell
     }

@@ -14,12 +14,11 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     static let identifier = "ListCVC"
     static let SUBVIEW_TAG: Int = 1000
     
-    var tableView = UITableView(frame: .zero, style: .grouped)
-//    let cellIdentifier: String = "ListTVC"
-    let storeList = ["하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", ]
-    
     //MARK: - Properties
     let listLabel = UILabel()
+    let storeList = ["하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", "하나", "둘", ]
+    
+    var tableView = UITableView(frame: .zero, style: .grouped)
     
     //MARK: - Life Cycle
     override func awakeFromNib() {
@@ -36,9 +35,6 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     //MARK: - Custom Method
     private func configUI() {
         self.backgroundColor = .white
-        
-//        listLabel.text = "귀찮다"
-//        listLabel.textColor = .black
     }
     
     private func setupLayout() {
@@ -56,26 +52,16 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     }
     
     private func setupTableView() {
-        
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.register(ListTVC.self, forCellReuseIdentifier: ListTVC.identifier)
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ListTVC.identifier)
-        
-//        tableView.setupTableViewNib(nib: "ListTVC")
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ListTVC.identifier)
         
         tableView.backgroundColor = .clear
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.sectionFooterHeight = 0
 
     }
-    
-//    func setupTableViewNib(nib: String) {
-//        let customNib = UINib(nibName: nib, bundle: nil)
-//        ListCVC.register(customNib, forCellReuseIdentifier: nib)
-//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -99,21 +85,8 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListTVC", for: indexPath) as? ListTVC else { return UITableViewCell() }
-//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: ListTVC.identifier, for: indexPath)
-//        print("-------------------")
-//        print(ListTVC.identifier)
-//        print("-------------------")
-//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: ListTVC.self, for: indexPath)
-        
-//        cell.backgroundColor = .purple
-//        cell.tvcLabel.text
-//        cell.textLabel?.text = "잘못된거야"
-//        print("---------------")
-//        print("ListTVC 불러옴")
+
         cell.storeNameLabel.text = storeList[indexPath.row]
-//        print(cell.tvcLabel.text)
-//        print(cell.tvcLabel.text)
-//        cell.backgroundColor = .green
         
         return cell
     }
@@ -123,10 +96,3 @@ class ListCVC: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate 
     }
 
 }
-
-//extension UITableView {
-//    func setupTableViewNib(nib: String) {
-//        let customNib = UINib(nibName: nib, bundle: nil)
-//        self.register(customNib, forCellReuseIdentifier: nib)
-//    }
-//}

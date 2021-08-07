@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 
 class ListTVC: UITableViewCell {
-    
     static let identifier = "ListTVC"
     
+    //MARK: - Properties
     var storeNameLabel = UILabel()
     var storeImage = UIImageView()
     var starLabel = UILabel()
@@ -25,9 +25,9 @@ class ListTVC: UITableViewCell {
     let starImage = UIImageView()
     let clockImage = UIImageView()
 
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

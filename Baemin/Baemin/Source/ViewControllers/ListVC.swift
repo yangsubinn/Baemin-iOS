@@ -9,6 +9,16 @@ import UIKit
 import SnapKit
 
 class ListVC: UIViewController {
+    //MARK: - Properties
+    let backButton = UIButton()
+    let categories = ["한식", "분식", "돈까스·회·일식", "치킨", "피자", "아시안·양식", "중국집", "족발·보쌈", "야식", "찜·탕", "도시락", "카페·디저트", "패스트푸드"]
+    let listLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    let aligns = ["배달 빠른 순", "배달팁 낮은 순", "기본순", "주문 많은 순", "별점 높은 순", "가까운 순"]
+    let categoriesCellLineSpacing: CGFloat = 20.0
+    
+    var categoryLabel = UILabel()
+    var alignLabel = UILabel()
+    var topLabel = UILabel()
     
     private lazy var categoriesCollectionView: UICollectionView = {
         var layout = UICollectionViewFlowLayout()
@@ -60,7 +70,6 @@ class ListVC: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        collectionView.backgroundColor = .lightGray
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -71,25 +80,6 @@ class ListVC: UIViewController {
 
         return collectionView
     }()
-
-    //MARK: - Properties
-    let backButton = UIButton()
-    
-    var categoryLabel = UILabel()
-    var alignLabel = UILabel()
-    
-    let categories = ["한식", "분식", "돈까스·회·일식", "치킨", "피자", "아시안·양식", "중국집", "족발·보쌈", "야식", "찜·탕", "도시락", "카페·디저트", "패스트푸드"]
-    let listLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-    let aligns = ["배달 빠른 순", "배달팁 낮은 순", "기본순", "주문 많은 순", "별점 높은 순", "가까운 순"]
-//    let subViewController: [UIViewController] = []
-    let categoriesCellLineSpacing: CGFloat = 20.0
-    
-    var topLabel = UILabel()
-//    var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-    
-    
-    //MARK: - IBOutlet
-    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -99,14 +89,10 @@ class ListVC: UIViewController {
         configUI()
         setupCollectionView()
     }
-    
-    //MARK: - IBAction
-    
-    
+
     //MARK: - Custom Method
     private func setupLayout() {
         
-//        view.addSubviews([backButton, topLabel])
         view.addSubview(backButton)
         view.addSubview(topLabel)
         view.addSubview(listCollectionView)
@@ -115,7 +101,6 @@ class ListVC: UIViewController {
         view.addSubview(indicatorBarView)
         
         let labelSize = calcCategoryLabelSize(text: categories[0])
-//        print("labelSize:\(labelSize)")
         
         backButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(48)
@@ -157,8 +142,7 @@ class ListVC: UIViewController {
     func calcCategoryLabelSize(text: String) -> CGSize {
         categoryLabel.text = text
         categoryLabel.sizeToFit()
-
-//        print(categoryLabel.bounds.size)
+        
         return categoryLabel.bounds.size
     }
     
@@ -173,6 +157,7 @@ class ListVC: UIViewController {
         viewColtroller.view.tag = ListCVC.SUBVIEW_TAG
         cell.contentView.addSubview(viewColtroller.view)
 
+        /// 코드 쇽샥..
         /// 다른 UIViewController, PageViewController 등의 컨테이너 뷰컨에서 다른 UIViewController가 추가, 삭제된 후에 호출된다.
         /// 인자로 부모 뷰컨을 넣어서 호출해줌..
         /// 자식 뷰컨이 부모 뷰컨으로부터 추가, 삭제되는 상황에 반응할 수 있도록.
@@ -191,7 +176,6 @@ class ListVC: UIViewController {
     }
 
     private func setupCollectionView() {
-
         listCollectionView.setupCollectionViewNib(nib: ListCVC.identifier)
         alignCollectionView.setupCollectionViewNib(nib: alignCVC.identifier)
         categoriesCollectionView.setupCollectionViewNib(nib: categoriesCVC.identifier)
@@ -202,7 +186,6 @@ class ListVC: UIViewController {
     }
     
     func scrollToCategory(to index: Int) {
-//        categoriesCollectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .init())
         categoriesCollectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         collectionView(categoriesCollectionView, didSelectItemAt: IndexPath(row: index, section: 0))
     }
@@ -248,11 +231,6 @@ extension ListVC: UICollectionViewDataSource {
         case listCollectionView:
             guard let cell = listCollectionView.dequeueReusableCell(withReuseIdentifier: ListCVC.identifier, for: indexPath) as? ListCVC else { return UICollectionViewCell() }
             
-//            let sectionVC = subViewControllers[indexPath.row]
-
-//            return wrapAndGetCell(viewColtroller: sectionVC, cell: cell)
-            
-//            cell.listLabel.text = listLabels[indexPath.item]
             cell.backgroundColor = .white
 
             return cell
@@ -262,30 +240,10 @@ extension ListVC: UICollectionViewDataSource {
         
         }
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let size = calcLabelSize(text: categories[indexPath.row])
-//
-//        if collectionView == categoriesCollectionView {
-//            print("-----------")
-//            print("\(size.width), \(size.height)")
-////            return CGSize(width: size.width + 10, height: size.height + 26)
-//            return CGSize(width: size.width + 10, height: view.frame.height)
-//        }
-//        let height = UIScreen.main.bounds.height - (size.height + 26 + 3 + view.safeAreaInsets.top)
-////        return CGSize(width: UIScreen.main.bounds.width, height: floor(height))
-//
-//        return CGSize(width: view.frame.width, height: view.frame.height)
-//    }
 }
 
 // MARK: - UICollectionViewDelegate
 extension ListVC: UICollectionViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        /// listCollectionView indexPath.item이 3 이상일 때부터, categoriesCollecitonView랑 indicatorbar를 가운데로
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let idx = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
         scrollToCategory(to: idx)
@@ -331,9 +289,6 @@ extension ListVC: UICollectionViewDelegate {
                     make.width.equalTo(cell.snp.width)
                     make.height.equalTo(3)
                 }
-//                print("realCenter\(realCenter)")
-//                print("realCenter.x: \(realCenter.x),  realCenter.y: \(realCenter.y)")
-                
             }
 
             UIView.animate(withDuration: 0.3) {
@@ -366,17 +321,7 @@ extension ListVC: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == categoriesCollectionView {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-            
-            /// index 3이상일 때 가운데로 고정
-//            let totalCellWidth = CellWidth * CellCount
-//            let totalSpacingWidth = CellSpacing * (CellCount - 1)
-//            let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-//            let rightInset = leftInset
-            
-//            return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
-
-            
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)            
         } else if collectionView == alignCollectionView {
             return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
         }
