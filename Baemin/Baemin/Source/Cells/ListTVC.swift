@@ -54,7 +54,7 @@ class ListTVC: UITableViewCell {
         storeNameLabel.text = "가게이름"
         starLabel.text = "4.5"
         countLabel.text = "(100+)"
-        menuLabel.text = "대표메뉴1, 2, 3 ..."
+        menuLabel.text = "대표메뉴1, 2, 3, 4, 5, 6 ..."
         clockLabel.text = "25~44분,"
         leastPayLabel.text = "최소주문 5,000원"
         tipLabel.text = "배달팁 2,500원"
@@ -62,7 +62,7 @@ class ListTVC: UITableViewCell {
         starImage.image = UIImage(named: "Star")
         clockImage.image = UIImage(named: "clock")
         
-        storeNameLabel.font = .systemFont(ofSize: 16)
+        storeNameLabel.font = .boldSystemFont(ofSize: 17)
         starLabel.font = .boldSystemFont(ofSize: 13)
         countLabel.font = .systemFont(ofSize: 13)
         menuLabel.font = .systemFont(ofSize: 13)
@@ -82,12 +82,12 @@ class ListTVC: UITableViewCell {
         
         storeNameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(15)
-            make.leading.equalTo(storeImage.snp.trailing).offset(9)
+            make.leading.equalTo(storeImage.snp.trailing).offset(12)
         }
         
         starImage.snp.makeConstraints { make in
             make.top.equalTo(storeNameLabel.snp.bottom).offset(5)
-            make.leading.equalTo(storeImage.snp.trailing).offset(9)
+            make.leading.equalTo(storeImage.snp.trailing).offset(12)
             make.width.height.equalTo(12)
         }
         
@@ -108,7 +108,7 @@ class ListTVC: UITableViewCell {
         
         clockImage.snp.makeConstraints { make in
             make.top.equalTo(starImage.snp.bottom).offset(10)
-            make.leading.equalTo(storeImage.snp.trailing).offset(9)
+            make.leading.equalTo(storeImage.snp.trailing).offset(12)
             make.width.height.equalTo(11)
         }
         
@@ -124,7 +124,7 @@ class ListTVC: UITableViewCell {
         
         tipLabel.snp.makeConstraints { make in
             make.top.equalTo(clockImage.snp.bottom).offset(8)
-            make.leading.equalTo(storeImage.snp.trailing).offset(9)
+            make.leading.equalTo(storeImage.snp.trailing).offset(12)
         }
     
     }
