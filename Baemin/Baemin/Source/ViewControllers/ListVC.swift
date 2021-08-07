@@ -8,11 +8,6 @@
 import UIKit
 import SnapKit
 
-//enum MenuStatus: Int {
-//
-//
-//}
-
 class ListVC: UIViewController {
     
     private lazy var categoriesCollectionView: UICollectionView = {
@@ -65,7 +60,7 @@ class ListVC: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .lightGray
+//        collectionView.backgroundColor = .lightGray
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
 
@@ -219,7 +214,7 @@ extension ListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case categoriesCollectionView:
-            return listLabels.count
+            return categories.count
             
         case alignCollectionView:
             return aligns.count
@@ -257,8 +252,8 @@ extension ListVC: UICollectionViewDataSource {
 
 //            return wrapAndGetCell(viewColtroller: sectionVC, cell: cell)
             
-            cell.listLabel.text = listLabels[indexPath.item]
-            cell.backgroundColor = .clear
+//            cell.listLabel.text = listLabels[indexPath.item]
+            cell.backgroundColor = .white
 
             return cell
             

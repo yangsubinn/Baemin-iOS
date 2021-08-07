@@ -23,6 +23,21 @@
             </objects>
             <point key="canvasLocation" x="20" y="94"/>
         </scene>
+        <!--TableTestVC-->
+        <scene sceneID="IIV-M5-Fft">
+            <objects>
+                <viewController storyboardIdentifier="TableTestVC" title="TableTestVC" id="WJE-Kd-0HH" customClass="TableTestVC" customModule="Baemin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WEH-RQ-Fqi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bN7-DB-TZX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ga-md-Ess" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="94"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
