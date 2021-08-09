@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - GoogleAnalytics (3.20.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -7,20 +8,23 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - GoogleAnalytics
   - Moya (~> 14.0)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleAnalytics
     - Moya
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  GoogleAnalytics: 01e4c5a04544a3608f93e970ce0817836897c5a5
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 0e49f2655b4a44a38c073dc21f1a0c673b3cf6a4
+PODFILE CHECKSUM: 62c365cbcc1d1da0ac68f14e9db0d2d9eb4b1458
 
 COCOAPODS: 1.10.1
