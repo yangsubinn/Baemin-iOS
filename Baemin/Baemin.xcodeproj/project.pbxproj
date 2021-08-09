@@ -16,6 +16,9 @@
 		2B95897026B4307200B9E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B95896E26B4307200B9E0F2 /* LaunchScreen.storyboard */; };
 		2B95897B26B4307200B9E0F2 /* BaeminTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95897A26B4307200B9E0F2 /* BaeminTests.swift */; };
 		2B95898626B4307200B9E0F2 /* BaeminUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95898526B4307200B9E0F2 /* BaeminUITests.swift */; };
+		2BA2B6C226C1566E00A9819B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2B6C126C1566E00A9819B /* GoogleService-Info.plist */; };
+		2BA2B6C326C1566E00A9819B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2B6C126C1566E00A9819B /* GoogleService-Info.plist */; };
+		2BA2B6C426C1566E00A9819B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BA2B6C126C1566E00A9819B /* GoogleService-Info.plist */; };
 		2BBC1A0226B658930059B0BF /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0126B658930059B0BF /* ListVC.swift */; };
 		2BBC1A0726B675AB0059B0BF /* ListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0526B675AB0059B0BF /* ListCVC.swift */; };
 		2BBC1A0826B675AB0059B0BF /* ListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BBC1A0626B675AB0059B0BF /* ListCVC.xib */; };
@@ -62,6 +65,8 @@
 		2B95898126B4307200B9E0F2 /* BaeminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaeminUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B95898526B4307200B9E0F2 /* BaeminUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminUITests.swift; sourceTree = "<group>"; };
 		2B95898726B4307200B9E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BA2B6C026C153DC00A9819B /* Baemin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Baemin-Bridging-Header.h"; sourceTree = "<group>"; };
+		2BA2B6C126C1566E00A9819B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BBC1A0126B658930059B0BF /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		2BBC1A0526B675AB0059B0BF /* ListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCVC.swift; sourceTree = "<group>"; };
 		2BBC1A0626B675AB0059B0BF /* ListCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCVC.xib; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		2B95895726B4307100B9E0F2 = {
 			isa = PBXGroup;
 			children = (
+				2BA2B6C026C153DC00A9819B /* Baemin-Bridging-Header.h */,
 				2B95896226B4307100B9E0F2 /* Baemin */,
 				2B95897926B4307200B9E0F2 /* BaeminTests */,
 				2B95898426B4307200B9E0F2 /* BaeminUITests */,
@@ -175,6 +181,7 @@
 			children = (
 				2B95896C26B4307200B9E0F2 /* Assets.xcassets */,
 				2B95897126B4307200B9E0F2 /* Info.plist */,
+				2BA2B6C126C1566E00A9819B /* GoogleService-Info.plist */,
 				2B95899826B4324B00B9E0F2 /* Fonts */,
 				2B95899726B4324100B9E0F2 /* APIServices */,
 				2B95899626B4323100B9E0F2 /* Xibs */,
@@ -410,6 +417,7 @@
 				2B95896D26B4307200B9E0F2 /* Assets.xcassets in Resources */,
 				2BE06DA026B6A39E009749BF /* categoriesCVC.xib in Resources */,
 				2B95896B26B4307100B9E0F2 /* Main.storyboard in Resources */,
+				2BA2B6C226C1566E00A9819B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA2B6C326C1566E00A9819B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA2B6C426C1566E00A9819B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +666,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Baemin-Bridging-Header";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -710,6 +721,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Baemin-Bridging-Header";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -728,7 +740,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SOPT.Baemin;
+				PRODUCT_BUNDLE_IDENTIFIER = subin.Baemin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -748,7 +760,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SOPT.Baemin;
+				PRODUCT_BUNDLE_IDENTIFIER = subin.Baemin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

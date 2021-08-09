@@ -9,6 +9,7 @@ target 'Baemin' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya', '~> 14.0'
   pod 'GoogleAnalytics'
+  pod 'Firebase/Analytics'
 
   target 'BaeminTests' do
     inherit! :search_paths
