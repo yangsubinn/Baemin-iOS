@@ -254,15 +254,14 @@ extension ListVC: UICollectionViewDelegate {
             listCollectionView.isPagingEnabled = false
             listCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
             listCollectionView.isPagingEnabled = true
+            
+            categoriesCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            topLabel.text = categories[indexPath.item]
 
             guard let cell = categoriesCollectionView.cellForItem(at: indexPath) as? categoriesCVC else { return }
             
-            let realCenter = categoriesCollectionView.convert(cell.center, to: categoriesCollectionView.superview)
-            
-            topLabel.text = categories[indexPath.item]
-            
             print("------------------------------------------------")
-            print("realCenter\(realCenter)")
             print("indexPath.item: \(categories[indexPath.item])")
             print(categories.firstIndex(of: categories[indexPath.item]) ?? 0)
             
